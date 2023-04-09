@@ -1,12 +1,13 @@
 {
   "expo": {
-    "name": "blank",
-    "slug": "blank",
-    "version": "1.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ]
+    "name": "DummyUsers",
+    "extra": {
+      "eas": {
+        "projectId": "b2a13984-479a-4a39-a290-c0f6990b0192"
+      }
+    },
+    "android": {
+      "package": "com.venomx.dummyusers"
+    }
   }
 }
