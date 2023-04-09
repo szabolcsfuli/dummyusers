@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { populateUsersThunk, populatePostsThunk, populateAlbumsThunk } from '../thunks'
 import { setUser } from '../store'
-import {  } from '../store'
 
 export default ({ navigation }) => {
   const dispatch = useDispatch()

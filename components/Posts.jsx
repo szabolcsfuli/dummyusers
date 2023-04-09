@@ -1,7 +1,5 @@
-import { useEffect } from 'react'
 import { View, Text } from 'react-native'
-import { useSelector, useDispatch } from 'react-redux'
-import { populatePostsThunk } from '../thunks'
+import { useSelector } from 'react-redux'
 
 export default () => {
   const { posts } = useSelector(state => state.dummyDB)

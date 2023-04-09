@@ -1,5 +1,4 @@
 import { View, Text } from 'react-native'
-import { Link } from '@react-navigation/native'
 import { useDispatch, useSelector } from 'react-redux'
 import { populatePhotosThunk } from '../thunks'
 
