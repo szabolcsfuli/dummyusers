@@ -1,15 +1,12 @@
-import { View, Text } from "react-native";
+import { Provider } from 'react-redux'
+import store from './store'
+import Navigation from './components/Navigation'
 
-export default function App() {
+export default function App () {
+  
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Universal React with Expo</Text>
-    </View>
-  );
+    <Provider store={store}>
+      <Navigation />
+    </Provider>
+  )
 }
