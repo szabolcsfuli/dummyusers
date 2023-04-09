@@ -53,7 +53,7 @@ const UserTabs = () => {
       <UserTab.Screen
         name='Albums'
         options={{
-          title: 'Albums'
+          title: 'Photo Albums'
         }}
         component={Albums}
       />
