@@ -1,27 +1,31 @@
-import { View, Text, Image } from 'react-native'
+import { Text, Image, SafeAreaView, ScrollView } from 'react-native'
 import { useSelector } from 'react-redux'
+import style from '../style'
+import { List } from 'react-native-paper'
 
 export default () => {
   const { photos } = useSelector(state => state.dummyDB)
 
   return (
-    <View>
-      {photos.length > 0 ? (
-        photos.map(item => (
-          <Text key={item.id}>
-            <Image
-              style={{
-                width: 50,
-                height: 50
-              }}
-              source={{ uri: item.thumbnailUrl }}
+    <SafeAreaView style={[style.container]}>
+      <ScrollView>
+        {photos.length > 0 ? (
+          photos.map(item => (
+            <List.Item
+              key={item.id}
+              left={props => (
+                <Image
+                  style={{ width: 50, height: 50 }}
+                  source={{ uri: item.thumbnailUrl }}
+                />
+              )}
+              title={item.title}
             />
-            {item.title}
-          </Text>
-        ))
-      ) : (
-        <Text>No photo</Text>
-      )}
-    </View>
+          ))
+        ) : (
+          <Text>No photo</Text>
+        )}
+      </ScrollView>
+    </SafeAreaView>
   )
 }

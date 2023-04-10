@@ -26,7 +26,7 @@ const Navigation = () => {
 const UserTab = createBottomTabNavigator()
 const UserTabs = () => {
   return (
-    <UserTab.Navigator
+    <UserTab.Navigator    
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName = focused ? 'ios-list' : 'ios-list-outline'

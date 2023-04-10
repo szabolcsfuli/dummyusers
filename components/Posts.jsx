@@ -1,21 +1,28 @@
-import { View, Text } from 'react-native'
+import { ScrollView, Text, SafeAreaView } from 'react-native'
 import { useSelector } from 'react-redux'
+import style from '../style'
+import { List } from 'react-native-paper'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 export default () => {
   const { posts } = useSelector(state => state.dummyDB)
 
   return (
-    <View>
-      {posts.length > 0 ? (
-        posts.map(item => (
-          <Text key={item.id}>
-            <Text style={{fontSize: 12, fontWeight: 'bold'}}>{item.title}</Text>
-            <Text>{item.body}</Text>
-          </Text>
-        ))
-      ) : (
-        <Text>No posts</Text>
-      )}
-    </View>
+    <SafeAreaView style={[style.container]}>
+      <ScrollView>
+        {posts.length > 0 ? (
+          posts.map(item => (
+            <List.Item
+              key={item.id}
+              title={item.title}
+              description={item.body}
+              left={props => <Icon name='code-outline' size={25} />}
+            />
+          ))
+        ) : (
+          <Text>No posts</Text>
+        )}
+      </ScrollView>
+    </SafeAreaView>
   )
 }
